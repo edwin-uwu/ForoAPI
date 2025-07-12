@@ -4,6 +4,7 @@ import com.edwin.hernandez.foro_api.modelos.DTOs.ActualizarTopicoDTO;
 import com.edwin.hernandez.foro_api.modelos.DTOs.ListaTopicos;
 import com.edwin.hernandez.foro_api.modelos.DTOs.RegistroTopicoDTO;
 import com.edwin.hernandez.foro_api.negocio.TopicosService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,7 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/topicos")
+@SecurityRequirement(name = "bearer-key")
 public class TopicoController {
 
     @Autowired
